@@ -6,7 +6,9 @@ import Overview from "./Overview";
 export default function CategoriesScreen({ navigation }) {
   function renderCategory(itemData) {
     function PressHandler() {
-      navigation.navigate("Meal Overview");
+      navigation.navigate("Meal Overview", {
+        categoryID: itemData.item.id,
+      });
     }
     return (
       <CategoryGridTile
