@@ -24,6 +24,7 @@ export default function Overview({ route, navigation }) {
     const Item = itemData.item;
 
     const mealItemProps = {
+      id: Item.id,
       title: Item.title,
       imageUrl: Item.imageUrl,
       affordability: Item.affordability,
