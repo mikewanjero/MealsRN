@@ -1,7 +1,7 @@
 import { Text, View, StyleSheet } from "react-native";
 
 export default function List({ data }) {
-  return data.ingredients.map((dataPoint) => (
+  return data.map((dataPoint) => (
     <View key={dataPoint} style={styles.listItem}>
       <Text style={styles.itemText}>{dataPoint}</Text>
     </View>
