@@ -15,10 +15,10 @@ const styles = StyleSheet.create({
     paddingVertical: 4,
     marginVertical: 10,
     marginHorizontal: 4,
-    backgroundColor: "#e2b497",
+    backgroundColor: "#E2B497",
   },
   itemText: {
-    color: "#ff7300",
+    color: "#FF7300",
     textAlign: "center",
   },
 });
