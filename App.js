@@ -7,6 +7,7 @@ import CategoriesScreen from "./screens/CategoriesScreen";
 import Overview from "./screens/Overview";
 import Details from "./screens/Details";
 import Favourites from "./screens/Favourites";
+import { AntDesign } from "@expo/vector-icons";
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -18,6 +19,10 @@ function DrawerNavigator() {
         headerStyle: { backgroundColor: "#ff7300" },
         headerTintColor: "white",
         sceneContainerStyle: { backgroundColor: "#b14d00" },
+        drawerContentStyle: { backgroundColor: "##ff0000" },
+        drawerInactiveTintColor: "#ffc888",
+        drawerActiveTintColor: "#ff5e00",
+        drawerActiveBackgroundColor: "#ffc888",
       }}
     >
       <Drawer.Screen
@@ -25,9 +30,21 @@ function DrawerNavigator() {
         component={CategoriesScreen}
         options={{
           title: "All Categories",
+          drawerIcon: ({ color, size }) => (
+            <AntDesign name="bars" color={color} size={size} />
+          ),
         }}
       />
-      <Drawer.Screen name="Favourites" component={Favourites} />
+      <Drawer.Screen
+        name="Favourites"
+        component={Favourites}
+        options={{
+          title: "Favourites",
+          drawerIcon: ({ color, size }) => (
+            <AntDesign name="star" color={color} size={size} />
+          ),
+        }}
+      />
     </Drawer.Navigator>
   );
 }
