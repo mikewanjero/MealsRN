@@ -31,7 +31,7 @@ export default function Details({ route, navigation }) {
   }, [navigation, headerButtonPressHandler]);
 
   return (
-    <View style={styles.rootContainer}>
+    <ScrollView style={styles.rootContainer}>
       <Image source={{ uri: selectedMeal.imageUrl }} style={styles.image} />
       <Text style={styles.title}>{selectedMeal.title}</Text>
       <MealDetails
@@ -40,17 +40,16 @@ export default function Details({ route, navigation }) {
         affordability={selectedMeal.affordability}
         textStyle={styles.detailText}
       />
-      <ScrollView>
-        <View style={styles.centreList}>
-          <View style={styles.listContainer}>
-            <SubTitle>Ingredients</SubTitle>
-            <List data={selectedMeal.ingredients} />
-            <SubTitle>Steps</SubTitle>
-            <List data={selectedMeal.steps} />
-          </View>
+
+      <View style={styles.centreList}>
+        <View style={styles.listContainer}>
+          <SubTitle>Ingredients</SubTitle>
+          <List data={selectedMeal.ingredients} />
+          <SubTitle>Steps</SubTitle>
+          <List data={selectedMeal.steps} />
         </View>
-      </ScrollView>
-    </View>
+      </View>
+    </ScrollView>
   );
 }
 
@@ -71,10 +70,10 @@ const styles = StyleSheet.create({
   detailText: {
     color: "white",
   },
-  listContainer: {
-    width: "80%",
-  },
   centreList: {
     alignItems: "center",
+  },
+  listContainer: {
+    width: "80%",
   },
 });
