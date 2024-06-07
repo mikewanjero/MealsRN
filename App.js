@@ -3,11 +3,13 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import CategoriesScreen from "./screens/CategoriesScreen";
+import { AntDesign } from "@expo/vector-icons";
 import Overview from "./screens/Overview";
 import Details from "./screens/Details";
 import Favourites from "./screens/Favourites";
-import { AntDesign } from "@expo/vector-icons";
 import FavouritesContextProvider from "./store/context/favourites-content";
+// import { Provider } from "react-redux";
+// import { store } from "./store/redux/store";
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -53,6 +55,7 @@ export default function App() {
   return (
     <>
       <StatusBar style="light" />
+      {/* <Provider store={store}> */}
       <FavouritesContextProvider>
         <NavigationContainer>
           <Stack.Navigator
@@ -75,6 +78,7 @@ export default function App() {
           </Stack.Navigator>
         </NavigationContainer>
       </FavouritesContextProvider>
+      {/* </Provider> */}
     </>
   );
 }
