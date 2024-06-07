@@ -5,7 +5,7 @@ import MealDetails from "../components/MealDetails";
 import SubTitle from "../components/MealDetail/SubTitle";
 import List from "../components/MealDetail/List";
 import IconButton from "../components/IconButton";
-import { FavouritesContext } from "../store/context/favourites-content";
+import { FavouritesContext } from "../store/context/favourites-context";
 
 export default function Details({ route, navigation }) {
   /* using useContext to save context for favourite meals*/
