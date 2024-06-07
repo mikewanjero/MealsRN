@@ -8,6 +8,7 @@ import Overview from "./screens/Overview";
 import Details from "./screens/Details";
 import Favourites from "./screens/Favourites";
 import { AntDesign } from "@expo/vector-icons";
+import FavouritesContextProvider from "./store/context/favourites-content";
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -53,26 +54,28 @@ export default function App() {
   return (
     <>
       <StatusBar style="light" />
-      <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName="Categories"
-          screenOptions={{
-            headerStyle: { backgroundColor: "#ff7300" },
-            headerTintColor: "white",
-            contentStyle: { backgroundColor: "#b14d00" },
-          }}
-        >
-          <Stack.Screen
-            name="Categories"
-            component={DrawerNavigator}
-            options={{
-              headerShown: false,
+      <FavouritesContextProvider>
+        <NavigationContainer>
+          <Stack.Navigator
+            initialRouteName="Categories"
+            screenOptions={{
+              headerStyle: { backgroundColor: "#ff7300" },
+              headerTintColor: "white",
+              contentStyle: { backgroundColor: "#b14d00" },
             }}
-          />
-          <Stack.Screen name="Meal Overview" component={Overview} />
-          <Stack.Screen name="Details" component={Details} />
-        </Stack.Navigator>
-      </NavigationContainer>
+          >
+            <Stack.Screen
+              name="Categories"
+              component={DrawerNavigator}
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen name="Meal Overview" component={Overview} />
+            <Stack.Screen name="Details" component={Details} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </FavouritesContextProvider>
     </>
   );
 }
