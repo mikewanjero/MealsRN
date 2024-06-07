@@ -25,7 +25,9 @@ export default function FavouritesContextProvider({ children }) {
     removeFavourite: removeFavourite,
   };
 
-  <FavouritesContext.Provider value={Value}>
-    {children}
-  </FavouritesContext.Provider>;
+  return (
+    <FavouritesContext.Provider value={Value}>
+      {children}
+    </FavouritesContext.Provider>
+  );
 }
