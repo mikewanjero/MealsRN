@@ -1,5 +1,4 @@
 import { StatusBar } from "expo-status-bar";
-import { Button, StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
@@ -20,9 +19,9 @@ function DrawerNavigator() {
         headerStyle: { backgroundColor: "#ff7300" },
         headerTintColor: "white",
         sceneContainerStyle: { backgroundColor: "#b14d00" },
-        drawerContentStyle: { backgroundColor: "##ff0000" },
-        drawerInactiveTintColor: "#ffc888",
+        drawerContentStyle: { backgroundColor: "#ff7300" },
         drawerActiveTintColor: "#ff5e00",
+        drawerInactiveTintColor: "#ffc888",
         drawerActiveBackgroundColor: "#ffc888",
       }}
     >

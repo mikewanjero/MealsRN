@@ -5,7 +5,7 @@ import MealDetails from "../components/MealDetails";
 import SubTitle from "../components/MealDetail/SubTitle";
 import List from "../components/MealDetail/List";
 import IconButton from "../components/IconButton";
-import { FavouritesContext } from "../store/context/favourites-context";
+import { FavouritesContext } from "../store/context/favourites-content";
 
 export default function Details({ route, navigation }) {
   /* using useContext to save context for favourite meals*/
@@ -23,10 +23,11 @@ export default function Details({ route, navigation }) {
   function changeFavHandler() {
     if (MealIsFavourite) {
       favMealsCtx.removeFavourite(mealId);
+      console.log("Removed from Favourites!");
     } else {
       favMealsCtx.addFavourite(mealId);
+      console.log("Added New Favourite Meal!");
     }
-    console.log("Added New Favourite Meal!");
   }
 
   useLayoutEffect(() => {
